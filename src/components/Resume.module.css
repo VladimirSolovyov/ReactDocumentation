@@ -1,0 +1,31 @@
+:root {
+	--main-color: grey;
+	--title-color: rgb(17, 16, 16);
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	border: 3px solid hsl(120deg 100% 25%);
+	padding: 2em;
+	color: var(--title-color);
+}
+
+.fullName {
+	font-size: 4em;
+	color: var(--title-color);
+}
+
+.avatar {
+	width: 10em;
+	border-radius: 50em;
+}
+
+.partTitle {
+	font-style: italic;
+	color: var(--main-color);
+}
+
+li {
+	list-style-type: none;
+}
