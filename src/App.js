@@ -9,8 +9,9 @@ import EffectExample from './components/EffectExample'
 import Clock from './components/Clock'
 import MailBox from './components/MailBox'
 import List from './components/List'
+import NameForm from './components/NameForm'
 
-// Списки и ключи!
+// https://ru.reactjs.org/docs/lifting-state-up.html Подъём состояния
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 			<Clock />
 			<MailBox unreadMsg={['hi', 'js']} />
 			<List />
+			<NameForm />
 		</div>
 	)
 }
