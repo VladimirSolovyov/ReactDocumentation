@@ -13,8 +13,10 @@ import NameForm from './components/NameForm'
 import Header from './components/UI/Header'
 import Br from './components/UI/Br'
 import Calculator from './components/TemperatureCalculator/Calculator'
+import WelcomDialog from './components/CompositionVsInheritance/WelcomDialog'
+import FilterableProductTable from './components/PhilosophyReact/FilterableProductTable'
 
-// https://ru.reactjs.org/docs/composition-vs-inheritance.html Композиция против наследования
+// https://ru.reactjs.org/docs/thinking-in-react.html Шаг 4
 
 function App() {
 	return (
@@ -44,6 +46,12 @@ function App() {
 			<Br />
 			<Header title='Подъём состояния' />
 			<Calculator />
+			<Br />
+			<Header title='Композиция против наследования' />
+			<WelcomDialog />
+			<Br />
+			<Header title='Итоги первой части' />
+			<FilterableProductTable />
 		</div>
 	)
 }
