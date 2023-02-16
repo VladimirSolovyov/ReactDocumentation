@@ -2,7 +2,25 @@ import React from 'react'
 import ProductCategoryRow from './ProductCategoryRow'
 import ProductRow from './ProductRow'
 
-const ProductTable = () => {
+const ProductTable = ({ products, filterText, inStockOnly }) => {
+	const rows = []
+	let lastCategory = null
+
+	products.forEach(product => {
+		if (product.name.indexOf(filterText) === -1) return
+		if (inStockOnly && !product.stocked) return
+
+		if (product.category !== lastCategory)
+			rows.push(
+				<ProductCategoryRow
+					category={product.category}
+					key={product.category}
+				/>
+			)
+
+		rows.push(<ProductRow product={product} key={product.name} />)
+		lastCategory = product.category
+	})
 	return (
 		<div>
 			<table>
@@ -12,15 +30,7 @@ const ProductTable = () => {
 						<td>Price</td>
 					</tr>
 				</thead>
-				<tbody>
-					<ProductCategoryRow category={'Sporting Goods'} />
-					<ProductRow name='Football' price='$49.99' />
-					<ProductRow name='Basketball' price='$29.99' />
-					<ProductCategoryRow category={'Electronics'} />
-					<ProductRow name='iPod Touch' price='$99.99' />
-					<ProductRow name='iPhone 5' price='$399.99' />
-					<ProductRow name='Nexus 7' price='$199.99' />
-				</tbody>
+				<tbody>{rows}</tbody>
 			</table>
 		</div>
 	)
